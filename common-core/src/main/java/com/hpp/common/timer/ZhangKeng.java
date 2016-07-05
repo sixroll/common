@@ -1,4 +1,4 @@
-package com.hpp.com.timer;
+package com.hpp.common.timer;
 
 /**
  * Created by huangpingping on 2016/7/5 15:59
