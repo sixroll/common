@@ -33,17 +33,17 @@ public class TestService {
 
     @Transactional
     public void testSingleConnectionRollback() throws SQLException {
-        testDb.createExecutor().executeUpdate(insertSql, 1, 1, "1111111");
+        testDb.executeUpdate(insertSql, 1, 1, "1111111");
 
-        testDb.createExecutor().executeUpdate(insertSql, 2, "wqe", "2222222");
+        testDb.executeUpdate(insertSql, 2, "wqe", "2222222");
     }
 
 
     @Transactional
     public void testCompletedTransaction() throws SQLException {
-        testDb.createExecutor().executeUpdate(insertSql, 11, 11, "1111111");
+        testDb.executeUpdate(insertSql, 11, 11, "1111111");
 
-        testDb.createExecutor().executeUpdate(insertSql, 22, 22, "2222222");
+        testDb.executeUpdate(insertSql, 22, 22, "2222222");
     }
 
 

@@ -50,7 +50,7 @@ public class DbFactory{
         }
 
         @Override
-        public SqlExecutor createExecutor() throws SQLException {
+        public SqlExecutor getExecutor() throws SQLException {
             SqlExecutor sqlExecutor = sqlExecutorFactory.createSqlExecutor(this.db);
             return sqlExecutor;
         }

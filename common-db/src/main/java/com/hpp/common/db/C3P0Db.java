@@ -20,7 +20,7 @@ public class C3P0Db implements Db {
     }
 
     @Override
-    public SqlExecutor createExecutor() throws SQLException {
+    public SqlExecutor getExecutor() throws SQLException {
         SqlExecutor sqlExecutor = sqlExecutorThreadLocal.get();
         if(sqlExecutor == null || sqlExecutor.isClosed()){
             sqlExecutor = new DefaultSqlExecutor(c3P0ConnectionManager.getConnection());

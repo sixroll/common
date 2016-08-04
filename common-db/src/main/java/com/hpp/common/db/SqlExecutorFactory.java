@@ -15,7 +15,7 @@ public class SqlExecutorFactory implements ISqlExecutorFactory {
 
     @Override
     public SqlExecutor createSqlExecutor(Db db) throws SQLException {
-        SqlExecutor currentExecutor = db.createExecutor();
+        SqlExecutor currentExecutor = db.getExecutor();
         currentExecutor.bindTransaction(transactionThreadLocal.get());
 
         return currentExecutor;

@@ -34,10 +34,7 @@ public class TestDb {
     public void testQuery() throws SQLException {
         Password password = new Password();
 
-
-        SqlExecutor sqlExecutor = testDb.createExecutor();
-
-        List<Password> result = sqlExecutor.selectList("select * from tb_password", password.builder(), null);
+        List<Password> result = testDb.selectList("select * from tb_password limit ?", password.builder(), new Object[]{3});
 
         System.out.println(result);
     }
