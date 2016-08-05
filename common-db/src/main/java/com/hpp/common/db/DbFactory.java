@@ -1,7 +1,6 @@
 package com.hpp.common.db;
 
 import com.hpp.common.db.config.DbUseConfig;
-import com.hpp.common.db.connection.C3P0ConnectionManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +14,7 @@ public class DbFactory{
     @Autowired
     private ISqlExecutorFactory sqlExecutorFactory;
 
-    void initConfig(String url, String userName, String password, String projectName) {
-        C3P0ConnectionManager dbConfigSchema = new C3P0ConnectionManager(url, userName, password);
-        DefaultSqlExecutor sqlExecutor = new DefaultSqlExecutor(dbConfigSchema.getConnection());
+    void initConfig(String url, String userName, String password) {
     }
 
     void initConfigFile(String filePath) {

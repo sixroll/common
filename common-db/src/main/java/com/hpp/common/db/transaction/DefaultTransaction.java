@@ -10,10 +10,6 @@ import java.sql.SQLException;
 public class DefaultTransaction implements Transaction {
     private ExecutorContainer executorContainer;
 
-    public DefaultTransaction(ExecutorContainer executorContainer) {
-        this.executorContainer = executorContainer;
-    }
-
     public DefaultTransaction() {
         this.executorContainer = new ExecutorContainer();
     }

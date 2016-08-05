@@ -28,12 +28,6 @@ public class C3P0ConnectionManager {
         init(dbUseConfig);
     }
 
-
-    public C3P0ConnectionManager(String jdbcUrl) {
-        this(new DbUseConfig(jdbcUrl));
-    }
-
-
     static class ParamInvoker<K, V> {
         public Map<K, V> container;
 

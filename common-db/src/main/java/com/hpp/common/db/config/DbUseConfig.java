@@ -15,15 +15,15 @@ public class DbUseConfig extends DataBase {
 
     private String password;
 
-    public DbUseConfig(){
+    public DbUseConfig() {
 
     }
 
-    public DbUseConfig(String jdbcUrl){
+    public DbUseConfig(String jdbcUrl) {
         this.jdbcUrl = jdbcUrl;
     }
 
-    public DbUseConfig(String jdbcUrl,String dbName,String userName,String password){
+    public DbUseConfig(String jdbcUrl, String dbName, String userName, String password) {
         this.jdbcUrl = jdbcUrl;
         this.dbName = dbName;
         this.userName = userName;
