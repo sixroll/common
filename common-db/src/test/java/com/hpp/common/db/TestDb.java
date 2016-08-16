@@ -1,6 +1,8 @@
 package com.hpp.common.db;
 
 import com.hpp.common.db.config.DbUseConfig;
+import com.hpp.common.page.IPage;
+import com.hpp.common.page.Page;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,11 +36,11 @@ public class TestDb {
     public void testQuery() throws SQLException {
         Password password = new Password();
 
-        List<Password> result = testDb.selectList("select * from tb_password limit ?", password.builder(), new Object[]{3});
+        Page page = new Page(1, 10, IPage.PageType.ADD_ONE);
+        List<Password> result = testDb.selectList("select * from tb_password ", password.builder(), new Object[]{page});
 
         System.out.println(result);
     }
-
 
 
     @Test

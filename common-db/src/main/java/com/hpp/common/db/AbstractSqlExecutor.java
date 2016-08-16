@@ -22,7 +22,6 @@ public abstract class AbstractSqlExecutor implements SqlExecutor {
     protected Transaction transaction;
 
     public AbstractSqlExecutor(Connection connection) {
-        Assert.notNull(connection);
         this.connection = connection;
     }
 

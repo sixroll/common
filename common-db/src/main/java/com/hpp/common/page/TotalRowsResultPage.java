@@ -4,29 +4,29 @@ package com.hpp.common.page;
  * Created by huangpingping on 2016/8/5 10:15
  */
 public class TotalRowsResultPage implements ResultPage {
-    private IPage IPage;
+    private IPage page;
 
     private int totalRows;
 
-    public TotalRowsResultPage(IPage IPage, int totalRows) {
-        this.IPage = IPage;
+    public TotalRowsResultPage(IPage page, int totalRows) {
+        this.page = page;
         this.totalRows = totalRows;
     }
 
 
     @Override
     public boolean hasNext() {
-        return totalRows > (IPage.no() * IPage.size());
+        return totalRows > (page.no() * page.size());
     }
 
     @Override
     public int no() {
-        return IPage.no();
+        return page.no();
     }
 
     @Override
     public int size() {
-        return IPage.size();
+        return page.size();
     }
 
     @Override

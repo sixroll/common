@@ -23,8 +23,10 @@ public class C3P0Db implements Db {
     public SqlExecutor getExecutor() throws SQLException {
         SqlExecutor sqlExecutor = sqlExecutorThreadLocal.get();
         if(sqlExecutor == null || sqlExecutor.isClosed()){
-            sqlExecutor = new DefaultSqlExecutor(c3P0ConnectionManager.getConnection());
-            sqlExecutorThreadLocal.set(sqlExecutor);
+            DefaultSqlExecutor newExecutor = new DefaultSqlExecutor();
+            newExecutor.setConnection(c3P0ConnectionManager.getConnection());
+            sqlExecutorThreadLocal.set(newExecutor);
+            return newExecutor;
         }
         return sqlExecutor;
     }

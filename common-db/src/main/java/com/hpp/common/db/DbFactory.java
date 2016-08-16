@@ -49,7 +49,8 @@ public class DbFactory{
         @Override
         public SqlExecutor getExecutor() throws SQLException {
             SqlExecutor sqlExecutor = sqlExecutorFactory.createSqlExecutor(this.db);
-            return sqlExecutor;
+            SqlExecutor proxyExecutor = PageCglibProxy.getProxyInstanceFactory(sqlExecutor);
+            return proxyExecutor;
         }
 
         @Override
